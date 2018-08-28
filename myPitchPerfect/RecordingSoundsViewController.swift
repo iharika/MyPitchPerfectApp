@@ -24,11 +24,6 @@ class RecordingSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = false
     }
 
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-
     @IBAction func recordAudio(_ sender: Any) {
         print("Record button pressed")
         recordingLabel.text = "Recording in progress..."
@@ -39,8 +34,6 @@ class RecordingSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         let recordingName = "myAppRecordedVoice.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-        print(filePath ?? nil)
-        
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
